@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>金針花介紹｜校園花卉互動導覽</title>
   <link rel="stylesheet" href="style.css">
+   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -24,8 +25,21 @@
         <a class="primary-button" href="#ar-game">啟動 AR 探索任務</a>
       </div>
       <div class="flower-photo-frame">
-        <!-- 圖片替換處：請放入金針花主視覺圖片 images/daylily-hero.jpg，或修改下方 src。 -->
-        <img src="images/daylily-hero.jpg" alt="金針花盛開照片">
+        <!-- 3D模型替換處：請將 Blender 匯出的 GLB 檔放到 images/daylily-bloom.glb，或修改下方 src。 -->
+        <!-- poster 是模型載入前顯示的圖片，可放 images/daylily-hero.jpg；若沒有圖片也可刪除 poster。 -->
+        <model-viewer
+          id="daylilyModel"
+          class="daylily-model"
+          src="images/daylily-bloom.glb"
+          poster="images/daylily-hero.jpg"
+          alt="金針花 3D 動態盛開模型"
+          camera-controls
+          auto-rotate
+          autoplay
+          shadow-intensity="0.8"
+          exposure="1"
+          ar>
+        </model-viewer>
       </div>
     </section>
 
@@ -33,16 +47,21 @@
       <article>
         <h2>植物小檔案</h2>
         <ul class="fact-list">
-          <li><span>別名</span>忘憂草、黃花菜、萱草</li>
-          <li><span>花色</span>橙黃色，花形多為漏斗狀或喇叭狀</li>
-          <li><span>花期</span>夏季至初秋，約 7 月至 9 月</li>
-          <li><span>環境</span>喜歡陽光充足，耐旱且適應力強</li>
+           <li><span>學名</span>Hemerocallis fulva，為萱草屬 Hemerocallis 植物中常見品種之一</li>
+          <li><span>別名</span>萱草、忘憂草、黃花菜、一日百合 Daylily</li>
+          <li><span>花色</span>橘黃色最常見，花形多為漏斗狀或喇叭狀</li>
+          <li><span>花期</span>主要花期約 5 月至 8 月，單朵花通常只開 1 天左右，但整株會輪流開花數週</li>
+          <li><span>環境</span>適應溫暖、亞熱帶至溫帶氣候，喜歡充足陽光，半日照也可生長</li>
+          <li><span>土壤</span>適合排水良好的砂質土或壤土</li>
+          <li><span>分布</span>原產於東亞，包含中國、日本、韓國一帶；<br>台灣常見於花蓮六十石山、台東金針山等地</li>
+          <li><span>用途</span>可作為觀賞花卉，也可取未開花的花苞製成食用金針菜，如金針排骨湯、炒金針</li>
+          <li><span>提醒</span>部分品種需經過適當處理才可安全食用</li>
         </ul>
       </article>
 
       <article>
         <h2>校園位置</h2>
-        <p>目前網站以金針花盛開位置作為第一個互動標記，未來可以加入更多花卉地點，形成完整的校園植物地圖。</p>
+        <p>校門口兩側金針花盛開，為校園增添繽紛景色。</p>
         <!-- 圖片替換處：請放入實際種植地點照片 images/daylily-location.jpg，或修改下方 src。 -->
         <img class="content-image" src="images/daylily-location.jpg" alt="校園金針花種植地點">
       </article>
@@ -54,22 +73,22 @@
         <h2>金針花的文化意義</h2>
       </div>
       <div class="culture-cards">
-        <article>
+        <a class="culture-card" href="culture/culture-forget.html">
           <h3>忘憂</h3>
           <p>金針花又名忘憂草，象徵放下煩惱、獲得平靜。</p>
-        </article>
-        <article>
+        </a>
+         <a class="culture-card" href="culture/culture-joy.html">
           <h3>喜悅</h3>
           <p>鮮明的橙黃色花朵帶來明亮感受，常被連結到愉悅與希望。</p>
-        </article>
-        <article>
+        </a>
+         <a class="culture-card" href="culture/culture-mother.html">
           <h3>母愛</h3>
           <p>萱草在傳統文化中常代表母親、關懷與思念。</p>
-        </article>
-        <article>
+        </a>
+        <a class="culture-card" href="culture/culture-missing.html">
           <h3>思念</h3>
           <p>古典詩詞中的萱草意象，常寄託遊子對家人的牽掛。</p>
-        </article>
+          </a>
       </div>
     </section>
 
