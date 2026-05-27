@@ -137,3 +137,15 @@ if (quizModal) {
     }
   });
 }
+const daylilyModel = document.querySelector("#daylilyModel");
+
+if (daylilyModel) {
+  daylilyModel.addEventListener("load", () => {
+    const animations = daylilyModel.availableAnimations || [];
+
+    if (animations.length > 0) {
+      daylilyModel.animationName = animations[0];
+      daylilyModel.play();
+    }
+  });
+}
