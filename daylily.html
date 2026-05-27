@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>金針花介紹｜校園花卉互動導覽</title>
+  <link rel="stylesheet" href="style.css">
+   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">校園花卉導覽</a>
+    <nav class="nav-links" aria-label="主要導覽">
+      <a href="index.html">校園地圖</a>
+      <a href="#ar-game">沉浸式探索</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="flower-hero">
+      <div class="flower-hero-text">
+        <p class="eyebrow">Daylily</p>
+        <h1>忘憂與喜悅之花：金針花</h1>
+        <p>金針花又稱忘憂草、黃花菜與萱草，是兼具觀賞、食用與文化意義的校園花卉。</p>
+        <a class="primary-button" href="#ar-game">開始沉浸式探索</a>
+      </div>
+      <div class="flower-photo-frame">
+        <!-- 3D模型替換處：請將 Blender 匯出的 GLB 檔放到 images/daylily-bloom.glb，或修改下方 src。 -->
+        <!-- poster 是模型載入前顯示的圖片，目前使用 images/daylily-flower.jpg。 -->
+        <model-viewer
+          id="daylilyModel"
+          class="daylily-model"
+          src="images/daylily-bloom.glb"
+          poster="images/daylily-flower.jpg"
+          alt="金針花 3D 動態盛開模型"
+          camera-controls
+          auto-rotate
+          autoplay
+          shadow-intensity="0.8"
+          exposure="1"
+          ar>
+        </model-viewer>
+      </div>
+    </section>
+
+    <section class="info-grid">
+      <article>
+        <h2>植物小檔案</h2>
+        <ul class="fact-list">
+           <li><span>學名</span>Hemerocallis fulva，為萱草屬 Hemerocallis 植物中常見品種之一</li>
+          <li><span>別名</span>萱草、忘憂草、黃花菜、一日百合 Daylily</li>
+          <li><span>花色</span>橘黃色最常見，花形多為漏斗狀或喇叭狀</li>
+          <li><span>花期</span>主要花期約 5 月至 8 月，單朵花通常只開 1 天左右，但整株會輪流開花數週</li>
+          <li><span>環境</span>適應溫暖、亞熱帶至溫帶氣候，喜歡充足陽光，半日照也可生長</li>
+          <li><span>土壤</span>適合排水良好的砂質土或壤土</li>
+          <li><span>分布</span>原產於東亞，包含中國、日本、韓國一帶；<br>台灣常見於花蓮六十石山、台東金針山等地</li>
+          <li><span>用途</span>可作為觀賞花卉，也可取未開花的花苞製成食用金針菜，如金針排骨湯、炒金針</li>
+          <li><span>提醒</span>部分品種需經過適當處理才可安全食用</li>
+        </ul>
+      </article>
+
+      <article>
+        <h2>校園位置</h2>
+        <p>校門口兩側金針花盛開，為校園增添繽紛景色。</p>
+        <!-- 圖片替換處：請放入實際種植地點照片 images/daylily-location.jpg，或修改下方 src。 -->
+        <img class="content-image" src="images/daylily-location.jpg" alt="校園金針花種植地點">
+      </article>
+    </section>
+
+    <section class="culture-section">
+      <div>
+        <p class="eyebrow">Culture</p>
+        <h2>金針花的文化意義</h2>
+      </div>
+      <div class="culture-cards">
+        <a class="culture-card" href="culture/culture-forget.html">
+          <h3>忘憂</h3>
+          <p>金針花又名忘憂草，象徵放下煩惱、獲得平靜。</p>
+        </a>
+         <a class="culture-card" href="culture/culture-joy.html">
+          <h3>喜悅</h3>
+          <p>鮮明的橙黃色花朵帶來明亮感受，常被連結到愉悅與希望。</p>
+        </a>
+         <a class="culture-card" href="culture/culture-mother.html">
+          <h3>母愛</h3>
+          <p>萱草在傳統文化中常代表母親、關懷與思念。</p>
+        </a>
+        <a class="culture-card" href="culture/culture-missing.html">
+          <h3>思念</h3>
+          <p>古典詩詞中的萱草意象，常寄託遊子對家人的牽掛。</p>
+          </a>
+      </div>
+    </section>
+
+    <section class="value-section">
+      <article>
+        <h2>食用價值</h2>
+        <p>金針花作為黃花菜時，可用於湯品與炒菜，口感清爽，也含有維生素 A 與鐵質等營養成分。</p>
+      </article>
+      <article>
+        <h2>觀賞價值</h2>
+        <p>金針花色彩鮮明、花期集中，適合校園花壇與園藝造景，也能吸引昆蟲並增加環境生機。</p>
+      </article>
+    </section>
+
+    <section class="immersive-section" id="ar-game">
+      <div class="immersive-copy">
+        <p class="eyebrow">Immersive Guide</p>
+        <h2>金針花沉浸式探索</h2>
+        <p>拖曳下方場景左右觀察校園環境，點擊畫面中的資訊點，了解金針花的花朵、花苞、葉片、生長環境與校園位置。</p>
+      </div>
+
+      <div class="immersive-layout">
+        <div class="immersive-viewer" aria-label="金針花校園沉浸式場景">
+          <div class="drag-hint">拖曳畫面轉動視角</div>
+          <img id="immersiveScene" src="images/immersive/IMG_7896.jpg" alt="金針花校園寬景場景">
+          <button class="hotspot hotspot-flower" type="button" data-topic="flower">花朵</button>
+          <button class="hotspot hotspot-bud" type="button" data-topic="bud">花苞</button>
+          <button class="hotspot hotspot-leaf" type="button" data-topic="leaf">葉片</button>
+          <button class="hotspot hotspot-place" type="button" data-topic="place">位置</button>
+        </div>
+
+        <aside class="immersive-panel" aria-live="polite">
+          <p class="eyebrow" id="immersiveLabel">Flower</p>
+          <h3 id="immersiveTitle">點擊資訊點開始探索</h3>
+          <p id="immersiveText">你可以先拖曳場景觀察道路、建築、植栽與金針花的位置，再點擊亮起的標記查看介紹。</p>
+          <img id="immersivePhoto" src="images/immersive/IMG_7893.jpg" alt="金針花互動資訊圖片">
+        </aside>
+      </div>
+
+      <div class="scene-strip" aria-label="切換校園照片">
+        <button type="button" data-scene="images/immersive/IMG_7891.jpg">全景一</button>
+        <button type="button" data-scene="images/immersive/IMG_7896.jpg">全景二</button>
+        <button type="button" data-scene="images/immersive/IMG_7897.jpg">建築旁</button>
+        <button type="button" data-scene="images/immersive/IMG_7898.jpg">道路</button>
+        <button type="button" data-scene="images/immersive/IMG_7899.jpg">山坡</button>
+        <button type="button" data-scene="images/immersive/IMG_7900.jpg">花帶</button>
+        <button type="button" data-scene="images/immersive/IMG_7901.jpg">步道</button>
+        <button type="button" data-scene="images/immersive/IMG_7902.jpg">階梯旁</button>
+      </div>
+
+      <div class="immersive-gallery">
+        <figure>
+          <img src="images/immersive/IMG_7892.jpg" alt="金針花側面近照">
+          <figcaption>花朵側面</figcaption>
+        </figure>
+        <figure>
+          <img src="images/immersive/IMG_7893.jpg" alt="金針花正面近照">
+          <figcaption>花朵正面</figcaption>
+        </figure>
+        <figure>
+          <img src="images/immersive/IMG_7894.jpg" alt="金針花花苞">
+          <figcaption>花苞</figcaption>
+        </figure>
+        <figure>
+          <img src="images/immersive/IMG_7895.jpg" alt="金針花葉片與植株">
+          <figcaption>葉片與植株</figcaption>
+        </figure>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p><a href="index.html">回到校園地圖</a>｜珍惜校園中的金針花</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

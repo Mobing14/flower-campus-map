@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>校園花卉互動導覽</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">校園花卉導覽</a>
+    <nav class="nav-links" aria-label="主要導覽">
+      <a href="index.html">校園地圖</a>
+      <a href="daylily.html">金針花</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="map-hero">
+      <div class="map-intro">
+        <p class="eyebrow">Dayeh University Flower Map</p>
+        <h1>校園內花卉盛開位置</h1>
+        <p>從校園地圖開始探索花卉位置，將滑鼠移到放大鏡查看花卉資訊，點擊後進入詳細介紹頁。</p>
+      </div>
+
+      <div class="map-stage" aria-label="校園花卉地圖">
+        <!-- 圖片替換處：請將校園地圖圖片放到 images/campus-map.png，或修改下方 src。 -->
+        <img class="campus-map" src="images/campus-map.png" alt="大葉大學校園導覽圖">
+
+        <a class="flower-marker daylily-marker" href="daylily.html" aria-label="前往金針花介紹頁">
+          <span class="marker-icon" aria-hidden="true"></span>
+          <span class="tooltip-card">
+            <!-- 圖片替換處：請將金針花照片放到 images/daylily-flower.jpg，或修改下方 src。 -->
+            <img src="images/daylily-flower.jpg" alt="金針花照片">
+            <strong>金針花</strong>
+            <small>又稱忘憂草、黃花菜，象徵忘憂、喜悅與母愛。</small>
+          </span>
+        </a>
+
+        <button class="flower-marker locked-marker marker-one" type="button" aria-label="未來花卉位置">
+          <span class="marker-icon" aria-hidden="true"></span>
+          <span class="tooltip-card text-only">
+            <strong>預留花卉</strong>
+            <small>未來可加入其他校園花卉介紹頁。</small>
+          </span>
+        </button>
+
+        <button class="flower-marker locked-marker marker-two" type="button" aria-label="未來花卉位置">
+          <span class="marker-icon" aria-hidden="true"></span>
+          <span class="tooltip-card text-only">
+            <strong>預留花卉</strong>
+            <small>可新增花名、照片與介紹頁連結。</small>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <section class="feature-band">
+      <div>
+        <p class="eyebrow">Website Concept</p>
+        <h2>以地圖作為入口的校園花卉探索</h2>
+      </div>
+      <p>本網站先以金針花作為示範，未來能在地圖上持續新增其他花卉標記，讓使用者用互動方式認識校園自然環境。</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>忘憂與喜悅之花 - 金針花校園探索專題</p>
+  </footer>
+</body>
+</html>
