@@ -397,6 +397,10 @@ h2 {
   scroll-margin-top: 86px;
 }
 
+.culture-section {
+  scroll-margin-top: 86px;
+}
+
 .culture-detail-list {
   display: grid;
   gap: 18px;
