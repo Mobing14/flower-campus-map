@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>金針花介紹｜校園花卉互動導覽</title>
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css">
   <link rel="stylesheet" href="style.css">
-   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -61,7 +62,7 @@
 
       <article>
         <h2>校園位置</h2>
-        <p>校門口兩側金針花盛開，為校園增添繽紛景色。</p>
+        <p>入口斜坡道路兩旁的金針花盛開，為校園增添繽紛景色。</p>
         <!-- 圖片替換處：請放入實際種植地點照片 images/daylily-location.jpg，或修改下方 src。 -->
         <img class="content-image" src="images/daylily-location.jpg" alt="校園金針花種植地點">
       </article>
@@ -107,37 +108,37 @@
       <div class="immersive-copy">
         <p class="eyebrow">Immersive Guide</p>
         <h2>金針花沉浸式探索</h2>
-        <p>拖曳下方場景左右觀察校園環境，點擊畫面中的資訊點，了解金針花的花朵、花苞、葉片、生長環境與校園位置。</p>
+        <p>拖曳旋轉、傾斜與縮放免費 3D 校園地圖，點擊金針花標記或主題按鈕，認識花朵、花苞、葉片與校園位置。</p>
       </div>
 
       <div class="immersive-layout">
-        <div class="immersive-viewer" aria-label="金針花校園沉浸式場景">
-          <div class="drag-hint">拖曳畫面轉動視角</div>
-          <img id="immersiveScene" src="images/immersive/IMG_7896.jpg" alt="金針花校園寬景場景">
-          <button class="hotspot hotspot-flower" type="button" data-topic="flower">花朵</button>
-          <button class="hotspot hotspot-bud" type="button" data-topic="bud">花苞</button>
-          <button class="hotspot hotspot-leaf" type="button" data-topic="leaf">葉片</button>
-          <button class="hotspot hotspot-place" type="button" data-topic="place">位置</button>
+        <div class="immersive-map-shell">
+          <div id="immersiveMap" class="immersive-map" aria-label="大葉大學金針花免費 3D 地圖"></div>
+          <div class="map-status" id="mapStatus" role="status">正在載入免費 3D 地圖...</div>
+          <div class="map-legend">
+            <strong>免費 3D 校園導覽</strong>
+            <span><i class="legend-dot flower-dot"></i>斜坡道路金針花帶</span>
+          </div>
         </div>
 
         <aside class="immersive-panel" aria-live="polite">
-          <p class="eyebrow" id="immersiveLabel">Flower</p>
-          <h3 id="immersiveTitle">點擊資訊點開始探索</h3>
-          <p id="immersiveText">你可以先拖曳場景觀察道路、建築、植栽與金針花的位置，再點擊亮起的標記查看介紹。</p>
+          <p class="eyebrow" id="immersiveLabel">Campus 3D</p>
+          <h3 id="immersiveTitle">從 3D 地圖探索金針花</h3>
+          <p id="immersiveText">按住滑鼠拖曳地圖，使用右鍵或 Ctrl 加拖曳調整視角；入口斜坡道路兩旁排列了兩排 3D 金針花模型。</p>
           <img id="immersivePhoto" src="images/immersive/IMG_7893.jpg" alt="金針花互動資訊圖片">
         </aside>
       </div>
 
-      <div class="scene-strip" aria-label="切換校園照片">
-        <button type="button" data-scene="images/immersive/IMG_7891.jpg">全景一</button>
-        <button type="button" data-scene="images/immersive/IMG_7896.jpg">全景二</button>
-        <button type="button" data-scene="images/immersive/IMG_7897.jpg">建築旁</button>
-        <button type="button" data-scene="images/immersive/IMG_7898.jpg">道路</button>
-        <button type="button" data-scene="images/immersive/IMG_7899.jpg">山坡</button>
-        <button type="button" data-scene="images/immersive/IMG_7900.jpg">花帶</button>
-        <button type="button" data-scene="images/immersive/IMG_7901.jpg">步道</button>
-        <button type="button" data-scene="images/immersive/IMG_7902.jpg">階梯旁</button>
+      <div class="map-toolbar" aria-label="3D 地圖與介紹控制">
+        <button type="button" data-map-action="campus">回到校園</button>
+        <button type="button" data-map-action="top">俯視地圖</button>
+        <button type="button" data-map-action="flower">金針花位置</button>
+        <button type="button" data-topic="flower">花朵介紹</button>
+        <button type="button" data-topic="bud">花苞介紹</button>
+        <button type="button" data-topic="leaf">葉片介紹</button>
+        <button type="button" data-topic="place">環境介紹</button>
       </div>
+      <p class="map-data-note">地圖資料：OpenStreetMap / OpenFreeMap。斜坡道路與 3D 花帶位置為專題展示配置，並非精準導航資料。</p>
 
       <div class="immersive-gallery">
         <figure>
@@ -165,6 +166,15 @@
     <p><a href="index.html">回到校園地圖</a>｜珍惜校園中的金針花</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.180.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.180.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>

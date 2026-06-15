@@ -1,0 +1,9 @@
+codex/tmp/
+codex/private/
+codex/artifacts/
+codex_tmp/
+codex_compressed/
+.playwright-cli/
+.DS_Store
+Thumbs.db
+*.log
